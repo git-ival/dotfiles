@@ -19,7 +19,7 @@ alias d="docker"
 alias k="kubectl"
 alias h="helm"
 alias t="terraform"
-alias code="open -a 'Visual Studio Code' "
+# alias code="open -a 'Visual Studio Code' "
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`

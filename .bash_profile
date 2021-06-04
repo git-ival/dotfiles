@@ -15,15 +15,6 @@ eval "$(pyenv init --path)"
 # pyenv virtualenvwrapper set to prefer pyenv
 export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
 
-# git bash completion
-[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
-
-# bash-completion@2
-[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
-
-# terraform completion
-complete -C /usr/local/bin/terraform terraform
-
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
@@ -31,6 +22,18 @@ for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
+
+# git bash completion
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+
+# bash-completion@2
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+
+# kubectl alias completion
+complete -F __start_kubectl k
+
+# terraform completion
+complete -C /usr/local/bin/terraform terraform
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob;
