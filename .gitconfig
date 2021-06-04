@@ -155,7 +155,10 @@
 	default = simple
 	# Make `git push` push relevant annotated tags when pushing branches out.
 	followTags = true
+[user]
 
+	name = Iramis Valentin
+	email = 85186645+git-ival@users.noreply.github.com
 # URL shorthands
 
 [url "git@github.com:"]

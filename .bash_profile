@@ -1,5 +1,28 @@
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+export LC_CTYPE="en_US.UTF-8"
+
 # Add `~/bin` to the `$PATH`
-export PATH="$HOME/bin:$PATH";
+export USER_BIN="$HOME/bin";
+export BIN_PATHS="$USER_BIN:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
+PATH="/usr/local/bin:/usr/local/sbin:$PATH:$USER_BIN"
+
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+
+# pyenv virtualenvwrapper set to prefer pyenv
+export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
+
+# git bash completion
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+
+# bash-completion@2
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+
+# terraform completion
+complete -C /usr/local/bin/terraform terraform
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
